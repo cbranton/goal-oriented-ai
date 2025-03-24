@@ -47,8 +47,13 @@ class Controller:
             for action in current_plan:
                 self.agent.take_action(action)
             self.update_faction()
+            #TODO: is this the right order for these? what else could be done better?
+            self.update_goals()
             time += 1
         return False
+
+    def update_goals(self):
+        pass
 
     def execute_plan(self, plan):
         for action in plan:
